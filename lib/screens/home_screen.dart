@@ -25,8 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        body: ArticlesScreen()
-        // Column(children: <Widget>[Text('Hi')]),
-        );
+        body: ArticlesScreen());
   }
 }
