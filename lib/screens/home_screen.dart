@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/articles_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -24,6 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        body: Column(children: <Widget>[Text('Hi')]));
+        body: ArticlesScreen()
+        // Column(children: <Widget>[Text('Hi')]),
+        );
   }
 }
