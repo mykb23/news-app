@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/api/api_call.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:news_app/screens/article_details_screen.dart';
 import 'package:news_app/widgets/news_articles_tile.dart';
 
 class ArticlesScreen extends StatefulWidget {
@@ -92,13 +93,15 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
                   }
                   if (snapshot.hasData) {
                     return ListView.builder(
-                      // scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, index) => GestureDetector(
-                          onTap: () => print(index),
-                          child: NewsArticleTitle(
-                              snapshot: snapshot, index: index)),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ArticleDetailsScreen(
+                                      newsUrl: snapshot.data[index].url))),
+                          child: newsArticleTitle(snapshot, index)),
                     );
                   } else {
                     return Center(

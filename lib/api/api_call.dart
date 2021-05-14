@@ -21,8 +21,6 @@ class ApiCallClass {
     } on SocketException {
       throw Failure(message: 'You are not connected to the internet');
     } catch (error) {
-      // print(error);
-      // throw error.toString();
       throw Failure(message: error.toString());
     }
   }
@@ -30,7 +28,7 @@ class ApiCallClass {
   Future<List<ArticleElement>> getNewsByCategory(String category) async {
     try {
       final news = await http.get(Uri.parse(
-          "https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=f6f3ef984d4241f8aadac7e1adba5ec3"));
+          "https://newsapi.org/v2/top-headlines?country=ng&category=$category&apiKey=f6f3ef984d4241f8aadac7e1adba5ec3"));
       if (news.statusCode == 200) {
         final Iterable rawJson = jsonDecode(news.body)['articles'];
         return rawJson
@@ -42,8 +40,6 @@ class ApiCallClass {
     } on SocketException {
       throw Failure(message: 'You are not connected to the internet');
     } catch (error) {
-      // print(error);
-      // throw error.toString();
       throw Failure(message: error.toString());
     }
   }
