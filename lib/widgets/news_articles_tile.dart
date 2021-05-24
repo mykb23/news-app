@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-Widget newsArticleTitle(snapshot, index) {
+Widget newsArticleTile(snapshot, index) {
   return Container(
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),

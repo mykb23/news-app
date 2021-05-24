@@ -27,8 +27,14 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: FlutterLogo(
-          size: 300,
+        child: Text.rich(
+          TextSpan(
+            text: 'News ',
+            style: TextStyle(color: Colors.black, fontSize: 80.0),
+            children: <TextSpan>[
+              TextSpan(text: 'App', style: TextStyle(color: Colors.amberAccent))
+            ],
+          ),
         ),
       ),
     );

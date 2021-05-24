@@ -12,6 +12,7 @@ class ArticlesScreen extends StatefulWidget {
 class _ArticlesScreenState extends State<ArticlesScreen> {
   final news = ApiCallClass().getNews();
   var newsByCategory;
+
   int selectedIndex = 0;
   List<String> categories = [
     "All news",
@@ -101,7 +102,7 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
                               MaterialPageRoute(
                                   builder: (context) => ArticleDetailsScreen(
                                       newsUrl: snapshot.data[index].url))),
-                          child: newsArticleTitle(snapshot, index)),
+                          child: newsArticleTile(snapshot, index)),
                     );
                   } else {
                     return Center(
